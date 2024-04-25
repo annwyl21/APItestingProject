@@ -1,4 +1,4 @@
 # APItestingProject
 Udemy Course Notes
 
-Swagger Petstore - OpenAPI 3.0
+Test Swagger API - Petstore on docker locally

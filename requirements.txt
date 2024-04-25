@@ -1,3 +1,7 @@
-woocommerce
+WooCommerce
 pytest
 pytest-html
+requests
+requests-oauthlib
+PyMySQL
+setuptools

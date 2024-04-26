@@ -11,6 +11,12 @@ class UtilApiRequests:
         path = self.base_url + self.endpoint
         response = requests.get(url=path, headers=self.headers)
         if response.status_code != expected_status_code:
-            logger.info(f"GET API Response: {response.status_code}")
+            logger.info(f"Unexpected GET API Response: {response.status_code} not {expected_status_code}")
         return response
-     
+    
+    def post_request(self, request_body, expected_status_code=200):
+        path = self.base_url + self.endpoint
+        response = requests.post(url=path, json=request_body, headers=self.headers)
+        if response.status_code != expected_status_code:
+            logger.info(f"Unexpected GET API Response: {response.status_code} not {expected_status_code}")
+        return response

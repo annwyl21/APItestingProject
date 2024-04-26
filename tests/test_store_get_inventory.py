@@ -7,7 +7,8 @@ pytestmark = pytest.mark.inventory
 
 @pytest.fixture(scope='module')
 def setup():
-    api_request = UtilApiRequests()
+    endpoint = "store/inventory"
+    api_request = UtilApiRequests(endpoint)
     response = api_request.get_request()
     status_code = response.status_code
     json_data = response.json()

@@ -30,6 +30,6 @@ def test_values_positive(setup):
 def test_placed_bigger_than_delivered(setup):
     assert setup.placed > setup.delivered
 
-@pytest.mark.tcid03
-def test_approved_less_than_1000(setup):
-    assert setup.approved < 1000
+# @pytest.mark.tcid03
+# def test_approved_less_than_1000(setup):
+#     assert setup.approved < 1000

@@ -1,9 +1,11 @@
 import requests
 import logging as logger
+import config
 
 class UtilApiRequests:
     def __init__(self, endpoint):
-        self.base_url = "http://localhost:8080/api/v3/"
+        # self.base_url = "http://localhost:8080/api/v3/"
+        self.base_url = config.BASE_URL
         self.endpoint = endpoint
         self.headers = {"Content-Type": "application/json"}
 

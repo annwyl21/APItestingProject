@@ -8,8 +8,8 @@ pytestmark = pytest.mark.get_purchase_order
 
 @pytest.fixture(scope='module')
 def setup():
-    pet_id = "1"
-    endpoint = "store/order/" + pet_id
+    pet_id = 1
+    endpoint = "store/order/" + str(pet_id)
     api_request = UtilApiRequests(endpoint)
     response = api_request.get_request()
     status_code = response.status_code
@@ -38,3 +38,11 @@ def test_date(setup):
     date = timestamp.date()
     today = date.today()
     assert date == today
+
+@pytest.mark.tcid16
+def test_sad_path():
+    pet_id = 999
+    endpoint = "store/order/" + str(pet_id)
+    api_request = UtilApiRequests(endpoint)
+    response = api_request.get_request()
+    assert response.status_code == 404, f"Unexpected status code: {response.status_code}"

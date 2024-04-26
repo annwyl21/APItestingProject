@@ -6,7 +6,7 @@ from datetime import datetime as dt
 
 pytestmark = pytest.mark.place_order
 
-purchase_order_id = 10
+purchase_order_id = 77
 pet_id = 198772
 quantity = 7
 order_timestamp = "2024-04-26T12:10:36.034Z"
@@ -65,3 +65,17 @@ def test_status_same(setup):
 @pytest.mark.tcid12
 def test_complete_same(setup):
     assert setup.complete == complete
+
+@pytest.mark.tcid15
+def test_verify_order():
+    logger.info("TEST: GET order")
+    endpoint = "store/order" + "/" + str(purchase_order_id)
+    api_request = UtilApiRequests(endpoint)
+    response = api_request.get_request()
+    json_data = response.json()
+    api_response = PurchaseOrder(response.status_code, json_data["id"], json_data["petId"], json_data["quantity"], json_data["shipDate"], json_data["status"], json_data["complete"])
+    assert api_response.po_id == purchase_order_id
+    assert api_response.pet_id == pet_id
+    assert api_response.quantity == quantity
+    assert api_response.status == status
+    assert api_response.complete == complete

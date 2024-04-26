@@ -14,7 +14,6 @@ def setup():
     response = api_request.get_request()
     status_code = response.status_code
     json_data = response.json()
-    print(json_data)
     api_response = PurchaseOrder(status_code, json_data["id"], json_data["petId"], json_data["quantity"], json_data["shipDate"], json_data["status"], json_data["complete"])
     return api_response
 

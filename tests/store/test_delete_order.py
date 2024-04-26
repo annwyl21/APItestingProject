@@ -37,3 +37,11 @@ def setup():
 def test_get_status_code(setup):
     logger.info("TEST: GET status code 200")
     assert setup == 200, f"Unexpected status code: {setup}"
+
+@pytest.mark.tcid14
+def test_attempt_get_invalid_id():
+    logger.info("TEST: GET status code 405 - not found")
+    endpoint = "store/order" + str(purchase_order_id)
+    api_request = UtilApiRequests(endpoint)
+    response = api_request.get_request()
+    assert response.status_code == 404, f"Unexpected status code: {response.status_code}"

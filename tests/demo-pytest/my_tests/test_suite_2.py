@@ -4,8 +4,8 @@ pytestmark= [pytest.mark.fe, pytest.mark.slow]
 
 @pytest.mark.smoke 
 class TestCheckout(object):
-    def test_checkout_as_guest(self):
-        print("checkout as guest")
+    def test_class_smoke(self):
+        print("Test Class with a smoke test")
     
     def test_checkout_again(self):
-        print("2nd test")
+        print("Test Class - 2nd smoke test")

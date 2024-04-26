@@ -5,12 +5,12 @@ pytestmark = pytest.mark.fe
 
 # decorators can be stacked to mark for multiple test suites
 @pytest.mark.smoke 
-def test_login_page_valid_user():
-    print("Logging with valid user")
+def test_smoke():
+    print("Smoke Test")
     print('+'*50)
 
 @pytest.mark.regression
-def test_login_page_wrong_password():
-    print("wrong password")
+def test_decorators():
+    print("Regression Test")
     print('-'*50)
 

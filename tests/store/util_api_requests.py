@@ -20,3 +20,8 @@ class UtilApiRequests:
         if response.status_code != expected_status_code:
             logger.info(f"Unexpected GET API Response: {response.status_code} not {expected_status_code}")
         return response
+    
+    def delete_request(self, purchase_order_id, expected_status_code=200):
+        path = self.base_url + self.endpoint + "/" + str(purchase_order_id)
+        response = requests.delete(url=path, headers=self.headers)
+        return response

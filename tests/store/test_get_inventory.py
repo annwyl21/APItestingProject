@@ -1,7 +1,7 @@
 import pytest
 import logging as logger
 from util_api_requests import UtilApiRequests
-from model_inventory import Inventory
+from inventory import Inventory
 
 pytestmark = pytest.mark.inventory
 

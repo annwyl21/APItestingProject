@@ -17,3 +17,4 @@ def test_login_page_wrong_password():
     print("")
     print("wrong password")
     print('-'*50)
+    

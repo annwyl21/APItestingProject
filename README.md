@@ -4,7 +4,12 @@
 - A utility class is used to handle api calls.
 - Fixtures are used to make the single initial api call for each test class
 
-### Project Set Up in Docker:
+Clone repo and install dependencies
+```
+pip install -r requirements.txt
+```
+
+### Use Docker to run API:
 Download Docker
 
 Pull *swaggerapi/petstore3:unstable* Image:

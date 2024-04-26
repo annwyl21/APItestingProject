@@ -1,15 +1,15 @@
 import pytest
 import logging as logger
 import requests
+from util_api_requests import UtilApiRequests
 from model_inventory import Inventory
 
 class TestInventoryAPI:
 
     @classmethod
     def setup_class(cls):
-        endpoint = "http://localhost:8080/api/v3/store/inventory"
-        headers = {"Accept": "application/json"}
-        response = requests.get(url=endpoint, headers=headers)
+        api_request = UtilApiRequests()
+        response = api_request.get_request()
         status_code = response.status_code
         json_data = response.json()
         # Class Variable

@@ -14,6 +14,7 @@ def setup():
     return response
 
 @pytest.mark.status_code
+#@pytest.mark.usefixtures(setup)
 def test_get_status_code(setup):
     logger.info("TEST: GET status code 200")
     assert setup.status_code == 200, f"Unexpected status code: {setup.status_code}"

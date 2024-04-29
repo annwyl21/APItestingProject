@@ -1,7 +1,7 @@
 import pytest
 import logging as logger
-from util_api_requests import UtilApiRequests
-from purchase_order import PurchaseOrder
+from tests.utilities.util_api_requests import UtilApiRequests
+from tests.models.purchase_order import PurchaseOrder
 from datetime import datetime as dt
 
 pytestmark = pytest.mark.get_purchase_order
